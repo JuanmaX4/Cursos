@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Clase # 2 sobre DOM</title>
+        <style>
+            #mi_id_de_prueba{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p id="parrafo">Mi primera clase practica de DOM</p>
+        
+        <script type="text/javascript">
+            var parrafo = document.getElementsByTagName('p');
+            //parrafo[0].id = 'mi_id_de_prueba';
+            //console.log(parrafo.innerText);
+            parrafo[0].style.color = 'blue';
+            parrafo[0].style.backgroundColor = 'yellow';
+
+        </script>
+    </body>
+</html>
