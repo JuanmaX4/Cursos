@@ -11,6 +11,11 @@
 
         <p id="parrafo">Mi primera clase practica de DOM</p>
         
+        <ul id="todo_list">
+            <li></li>
+        </ul>
+
+
         <script type="text/javascript">
             var parrafo = document.getElementsByTagName('p');
             //parrafo[0].id = 'mi_id_de_prueba';
@@ -18,6 +23,32 @@
             parrafo[0].style.color = 'blue';
             parrafo[0].style.backgroundColor = 'yellow';
 
+            var tareas = [
+                "Hacer la colada",
+                "Prepara la cena",
+                "Tirar la basura",
+            ];
+
+            var todoList = document.querySelector('#todo_list');
+
+            for(var i = 0; i<tareas.length; i++) {
+                var tarea = tareas[i];
+
+                var li = document.createElement('li');
+
+                li.textContent = tarea;
+                li.id = 'elemento_' + i;
+
+                todoList.appendChild(li);   
+            }
+
+            setTimeout(function() {
+                var elementAEliminar = document.getElementById('elemento_2');
+                todoList.removeChild(elementAEliminar);
+            },2000);
+
+
+            //console.log(todoList);
         </script>
     </body>
 </html>

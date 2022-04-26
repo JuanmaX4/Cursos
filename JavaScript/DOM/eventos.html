@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title>Clase # 2 sobre Eventos</title>
+    </head>
+<body>
+    <h1>Eventos</h1>
+    <button id="cambiarFondo">Cambiar fondo</button>
+
+    <script type="text/javascript">
+        var boton = document.getElementById('cambiarFondo');
+        
+        function random(numeroMaximo){
+            return Math.round(Math.random() * numeroMaximo);
+        }
+
+        boton.addEventListener("click", function(evento){
+            
+            console.log(evento);
+
+            var randomColor = [
+                random(255),
+                random(255),
+                random(255),
+            ];
+
+            document.body.style.backgroundColor = "rgb(" + randomColor[0] + 
+            "," + randomColor[1] + "," + randomColor[2] + ")"
+
+            //console.log('Boton clickado');
+        });
+        /*document.addEventListener("keydown", function(evento) {
+            console.log(evento);
+        });*/
+        document.addEventListener('cambiarFondo', function(evento) {
+            console.log(evento);
+            console.log(evento.detail);
+        })
+
+        var event = new CustomEvent('cambiarFondo', {'detail': 'Hola Jhon'});
+        
+        document.dispatchEvent(event);
+    </script>
+</body>
+</html>
