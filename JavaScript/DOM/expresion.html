@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Clase # 1 sobre expresiones regulares</title>
+    </head>
+<body>
+    <p>Expresiones regulares</p>
+
+    <script type="text/javascript">
+        var texto = "hola mundo";
+
+
+        var regExp= /^[a-z]$/g;
+
+        var regExp2 = /s+$/;
+
+        var texto2 = "holiIIAA";
+
+        console.log(texto.search(regExp));
+        console.log(regExp.test(texto));
+
+        console.log(texto2.search(regExp2));
+        console.log(regExp2.test(texto2));
+
+    </script>
+
+</body>
+</html>
