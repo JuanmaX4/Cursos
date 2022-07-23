@@ -1,0 +1,26 @@
+.circulo {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#exampleCircle{
+    width: 500px;
+    height: 500px;
+    background: red;
+    border-radius: 50%;
+}
+
+h1{
+    font-size: 4em;
+    color: #fff;
+}
+
+#logoUltimas{
+    width: 250px;  
+    height: auto;  
+    text-align: center;  
+    padding: 15px;  
+}

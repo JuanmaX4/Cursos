@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import dbdata from '../db.json';
+//import React, { useState, useEffect } from 'react';
+import usuario from '../db.json';
 import '../index.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
  
 function TableData() {
-    const [data, setData] = useState()
-    const URL = 'https://bitbucket.org/axtro/react_test/src/master/db.json';
+   // const [ setData] = useState()
+    //const URL = 'https://bitbucket.org/axtro/react_test/src/master/db.json';
  
     /*const fetchData = () => {
         fetch(URL)
@@ -21,14 +23,14 @@ function TableData() {
     }*/
     
 
-     const getData= ()=>{
-        fetch(URL
+    /* const getData= ()=>{
+        fetch('../db.json'
         ,{
           headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
            },
-           mode: 'no-cors',
+            mode: 'no-cors',
         }
         )
           .then(function(response){
@@ -40,39 +42,36 @@ function TableData() {
              setData(myJson)
           });
       }
-
+      
     useEffect( () => {
-         getData();
-    }, []);
+        setData(usuario)
+        console.log(usuario.profile)
+    }, []);*/
 
-   console.log(data)    
 
     /*useEffect(() => {
         setData(fetchData())
     }, [fetchData]) */
-
+    
     return (
         <>
-            <tbody>
-                <tr>
-                    <th>Nivel</th>
-                    <th>Constancia</th>
-                    <th>Puntos</th>
-                {data && data.length > 0 && data.map((p) => {
-                  <tr>
-
-                        <td>{p.profile.name}</td>
-                        <td>{p.profile.perseverance}</td>
-                        <td>{p.profile.mind_points}</td>
-                    </tr>
-                })}
-                </tr>
-            </tbody>
-
-        
- 
+            <div className="row d-flex justify-content-center text-center">
+                <div className="col-4">
+                    <span>{usuario.profile.level}</span>
+                    <h3>Nivel</h3>
+                </div>
+                <div className="col-4">
+                    <span>{usuario.profile.perseverance}</span>
+                    <h3>Constancia</h3>
+                </div>
+                <div className="col-4">
+                    <span>{usuario.profile.total_points}</span>
+                    <h3>Puntos</h3>
+                </div>
+            </div> 
         </>
     );
 }
+
  
 export default TableData;
