@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import clases from '../db.json';
 import '../index.css';
+import axios from 'axios';
  
 function UltimasClases() {
-    const [setData] = useState()
+    const [data, setData] = useState(null)
     const URL = '../db.json';
  
     /*const fetchData = () => {
@@ -18,10 +19,18 @@ function UltimasClases() {
             console.log(data)
  
     }*/
+
+    useEffect(() => {
+      axios.get('db.json').then((response) => {
+        setData(response.data);
+      });
+    }, []);
+
+
     
 
      const getData= async ()=>{
-        fetch(URL
+        fetch('db.json'
         ,{
           headers : { 
             'Content-Type': 'application/json',
@@ -39,15 +48,17 @@ function UltimasClases() {
           });
       }
 
+    /*
     useEffect( () => {
          getData(clases);
          console.log(clases.training_classes);
-    }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+    }, []); */ // eslint-disable-line react-hooks/exhaustive-deps
 
    //console.log(clases.training_classes)    
     /*useEffect(() => {
         setData(fetchData())
     }, [fetchData]) */
+    console.log(data)
 
     return (
         <>
@@ -55,9 +66,7 @@ function UltimasClases() {
                 <tr>
                   <h1>Ultimas Clases</h1>
                     <img id='logoUltimas' src={require('../logo.png')} height='90' alt='logoUltimasClases'/>    
-                    {clases.length && clases.training_classes.map((clases) => { 
-                      
-                      if(clases.id === '1')
+                    {data.length > 0 && clases.training_classes((clases) => {  
                         <tr>
                             <td>{clases.category_id}</td>
                         </tr>
