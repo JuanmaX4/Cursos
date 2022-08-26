@@ -1,5 +1,7 @@
 <?php
 
+//Ejercicio basico orientado a objeto PHP
+
 Class Persona{
     private $nombre;
     private $apellidos;
