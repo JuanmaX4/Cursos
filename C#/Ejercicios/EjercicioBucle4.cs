@@ -18,7 +18,10 @@ namespace Ejercicios{
                         esPrimo = false;
                     }
                 }
+                if (esPrimo)
+                {
                 System.Console.WriteLine(num);
+                }
             }
 
             Console.ReadKey();
