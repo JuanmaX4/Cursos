@@ -1,4 +1,4 @@
-Module Module1
+Basico Module1
 
     Sub Main()
         Console.WriteLine("Hola mundo")
@@ -21,4 +21,4 @@ Module Module1
 
 
     End Sub
-End Module
+End Basico
