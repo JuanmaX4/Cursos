@@ -1,0 +1,27 @@
+# 1 "/mnt/c/Users/juanm/Documents/Cursos/C++/Estructuras de control y tipos de datos/parImpar.cpp"
+# 1 "/mnt/c/Users/juanm/Documents/Cursos/C++/Estructuras de control y tipos de datos//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 1 "<command-line>" 2
+# 1 "/mnt/c/Users/juanm/Documents/Cursos/C++/Estructuras de control y tipos de datos/parImpar.cpp"
+using namespace std;
+
+int main(int argc, char *argv[]){
+    int var,num;
+    bool indicator;
+    indicator = false;
+
+    for (var=1; var <=5; var++){
+        cout << "Dime un numero:";
+        cin >> num;
+        if(num % 2 ==0)
+            indicator = true;
+    }
+    if(indicator)
+        cout << "Has introducido un numero par";
+    else
+        cout << "No has introducido un numero par";
+
+    return 0;
+}
